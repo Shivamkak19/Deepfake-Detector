@@ -1,7 +1,16 @@
+import sys
+import os
+
+# Add tortoise_tts directory to path:
+# Calculate the absolute path of the directory containing app.py, submodule directory, and append to system path
+app_directory = os.path.dirname(os.path.abspath(__file__))
+submodule_directory = os.path.join(app_directory, 'tortoise_tts')
+sys.path.append(submodule_directory)
+
+from tortoise_tts.tortoise.models.classifier import AudioMiniEncoderWithClassifierHead
+
 import streamlit as st
 import os 
-import tortoise.models
-# from tortoise.models.classifier.py import AudioMiniEncoderWithClassifierHead
 from glob import glob
 import io 
 import librosa
