@@ -1,6 +1,7 @@
 import streamlit as st
 import os 
-from tortoise.models.classifier import AudioMiniEncoderWithClassifierHead
+import tortoise.models
+# from tortoise.models.classifier.py import AudioMiniEncoderWithClassifierHead
 from glob import glob
 import io 
 import librosa
