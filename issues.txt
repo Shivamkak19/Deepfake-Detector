@@ -1,0 +1,25 @@
+ValueError: signal only works in main thread of the main interpreter
+2023-08-20 02:42:56.960 Uncaught app exception
+Traceback (most recent call last):
+  File "C:\Python311\Lib\site-packages\streamlit\runtime\scriptrunner\script_runner.py", line 552, in _run_script
+    exec(code, module.__dict__)
+  File "C:\Users\shiva\OneDrive\Documents\GitHub\Projects\project\main.py", line 1, in <module>
+    from tortoise_tts.voiceProtect_app import main
+  File "C:\Users\shiva\OneDrive\Documents\GitHub\Projects\project\tortoise_tts\voiceProtect_app.py", line 8, in <module>
+    from tortoise.models.classifier import AudioMiniEncoderWithClassifierHead
+  File "C:\Python311\Lib\site-packages\tortoise\__init__.py", line 3, in <module>
+    from .tortoise import *
+  File "C:\Python311\Lib\site-packages\tortoise\tortoise.py", line 26, in <module>
+    import atlastk
+  File "C:\Python311\Lib\site-packages\atlastk\__init__.py", line 31, in <module>
+    from Atlas import *
+  File "C:\Python311\Lib\site-packages\atlastk\Atlas.py", line 51, in <module>
+    signal.signal(signal.SIGINT, signal_handler)
+  File "C:\Python311\Lib\signal.py", line 56, in signal
+    handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: signal only works in main thread of the main interpreter
+
+
+*** Tortoise-tts uses atlastk library, and creates issues with threads for compilation when the app.py file is not located in the same directory. 
+*** To maintain relative import, a temporary fix has been to place voiceProtect_app.py directly into the tortoise-tts dir.
