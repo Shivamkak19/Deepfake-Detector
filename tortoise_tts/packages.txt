@@ -1,1 +1,2 @@
+libsox-fmt-all
 portaudio19-dev
