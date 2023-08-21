@@ -108,7 +108,7 @@ def classify_audio_clip(clip):
 def setStreamlitGUI():
 
     #App GUI
-    st.info("Current working directory:", os.getcwd())
+    # st.info("Current working directory:", os.getcwd())
 
     logo = Image.open('../resources/VoiceProtect-logo.png')
     # Resize, maintain aspect ratio
