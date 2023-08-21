@@ -93,6 +93,10 @@ def load_audio(audiopath, sampling_rate =22000):
         else:
             assert False, f"Error for unsupported audio format {audiopath[-4]}"
     elif isinstance(audiopath, io.BytesIO):
+
+        dir = os.getcwd()
+        st.info(dir)
+        
         audio, lsr = torchaudio.load(audiopath)
         audio = audio[0]
     
@@ -146,7 +150,7 @@ def setStreamlitGUI():
 
         st.info(uploaded_file)
         st.info(type(uploaded_file))
-        
+
         if uploaded_file is not None:
 
             if st.button("Analyze audio"):
