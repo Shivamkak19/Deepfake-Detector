@@ -78,8 +78,8 @@ Below, the set-up process is listed to host VoiceProtect on your local machine. 
 
 To run this project, you must download the latest version of the pip installer. Additionally, download the system requirements listed below. 
 
-Download ffmpeg: https://ffmpeg.org/download.html (used by pydub)
-portaudio19-dev: macOS see below, windows should install implicitly with pyaudio
+* Download ffmpeg: https://ffmpeg.org/download.html (used by pydub)
+* portaudio19-dev: macOS see below, windows should install implicitly with pyaudio
 
 * 
   ```sh
@@ -99,14 +99,19 @@ portaudio19-dev: macOS see below, windows should install implicitly with pyaudio
    git clone https://github.com/Shivamkak19/Deepfake-Detector.git
    ```
 
-2. Switch to py folder
+2. Switch to tortoise_tts folder
    ```sh
-   cd py
+   cd tortoise_tts
    ```
 
 3. Install dependencies
    ```sh
    pip install -r requirements.txt
+   ```
+
+4. Deploy Streamlit app on local server
+   ```sh
+   streamlit run voiceProtect_app.py
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -115,15 +120,17 @@ portaudio19-dev: macOS see below, windows should install implicitly with pyaudio
 ## Usage
 
 ![VoiceProtect Screen Shot][product1]
+
+
+Use the local VoiceProtect deployment to analyze the likelihood that an input audio file or live audio recording contains audio created with generative AI. To receive results, wait until the streamlit app has finished processing function calls (indicated in the product pictures). The accuracy of this identification system is based on preset tortoise-tts models and functions, as described in main description above. 
+
+Make sure to launch the file ./tortoise_tts/voiceProtect_app.py. The main app must be launched within the tortoise_tts folder, as tortoise_tts must be launched in the main thread to resolve signal issues with the atlastk library (see issues.txt). 
+
 ![VoiceProtect Screen Shot][product2]
 ![VoiceProtect Screen Shot][product3]
 ![VoiceProtect Screen Shot][product4]
 
-
-<!-- This project was designed as a learning project for the purpose of exposure into the process of developing trading algorithms. Any usage must be compliant with Pattern Day Trading rules, and failure to comply to these standards will result in the user's Alpaca client being flagged and banned. Feel free to tinker with this algorithm and explore. Do make sure to replace the dummy text with your unique Client ID and secret key.  -->
-
-<!-- ![Product Name Screen Shot][product-screenshot2]
-![Product Name Screen Shot][product-screenshot3] -->
+Additionally, the live streamlit deployment of VoiceProtect is currently facing issues with detecting an input device for audio recording with pyaudio. Check back here for updates.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
