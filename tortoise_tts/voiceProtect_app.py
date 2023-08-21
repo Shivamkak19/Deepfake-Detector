@@ -144,6 +144,9 @@ def setStreamlitGUI():
         st.info("Upload a .mp3 file from your local machine to analyze")
         uploaded_file = st.file_uploader("Choose a file", type = 'mp3')
 
+        st.info(uploaded_file)
+        st.info(type(uploaded_file))
+        
         if uploaded_file is not None:
 
             if st.button("Analyze audio"):
