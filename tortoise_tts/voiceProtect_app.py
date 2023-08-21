@@ -3,6 +3,7 @@
 
 import os
 import sys
+import streamlit as st
 
 
 app_directory = os.path.dirname(os.path.abspath(__file__))
@@ -47,7 +48,7 @@ import subprocess
 
 
 # Misc imports
-import streamlit as st
+# import streamlit as st
 import librosa
 import plotly.express as px
 import numpy as np 
