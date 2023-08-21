@@ -100,6 +100,7 @@ def setStreamlitGUI():
 
     #App GUI
     st.set_page_config(layout = "wide")
+    st.info("Current working directory:", os.getcwd())
 
     logo = Image.open('../resources/VoiceProtect-logo.png')
     # Resize, maintain aspect ratio
