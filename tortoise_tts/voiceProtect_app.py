@@ -42,6 +42,12 @@ app_directory = os.path.dirname(os.path.abspath(__file__))
 submodule_directory = os.path.join(app_directory, 'tortoise_tts')
 sys.path.append(submodule_directory)
 
+# Add root directory to sys path
+# Used for non-package imports (inputAudio.py, configWavPlot.py)
+parent_directory = os.path.join(os.path.dirname(__file__), '..')
+parent_directory = os.path.abspath(parent_directory)
+sys.path.append(parent_directory)
+
 # Set current working directory to parent dir of main app file(/tortoise_tts)
 # Resolves issue: local deploy launches CWD in parent dir, Streamlit Deploy launches CWD in root dir
 os.chdir(app_directory)
