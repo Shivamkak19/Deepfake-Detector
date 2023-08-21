@@ -164,6 +164,11 @@ def setStreamlitGUI():
     # Record User audio data, use as input to model
     with col2:
 
+        p = pyaudio.PyAudio()
+        for i in range(p.get_device_count()):
+            info = p.get_device_info_by_index(i)
+            st.info(f"Device {i}: {info['name']}")
+
         st.info("Record a live, 5 second audio clip live to analyze")
 
         if st.button("Record audio"):
