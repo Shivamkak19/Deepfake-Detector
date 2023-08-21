@@ -121,15 +121,26 @@ The original intent of this app is toward a live time deployment with iOS/androi
 <!-- ROADMAP -->
 ## Roadmap
 
-<!-- - [ ] Designate target dual-class shares
-- [ ] Authenticate Alpaca API with Client ID and secret
-- [ ] Perform HTTP GET/POST requests to fetch information from Alpaca Trading Client
-    - [ ] Set up functionality to order long position, short position, sell open positions, and cancel pending positions
-- [ ] Perform GET requests to Darqube API for live share pricing information
-- [ ] Create algorithm for margins at which to buy/sell short and long positions
-- [ ] Liquidate all holdings 5 minutes before closing bell
-- [ ] Set up Python Scheduler to send necessary API calls every 30 sec, open hours, Mon - Fri
-- [ ] Create simple user interface to manage holdings via Streamlit -->
+- [ ] Clone Tortoise-tts library locally
+- [ ] Collect .mp3 file path
+    - [ ] Load File, convert to tensor object with torchaudio
+- [ ] Utilize functions in classifier.py to classify deepfake audio input
+- [ ] Set up Streamlit GUI
+- [ ] Utilize pyaudio to accept live audio stream via default device microphone
+    - [ ] Convert files to/from wav as needed with pydub
+- [ ] Generate waveform plot from input audio file or recorded audio
+    - [ ] Convert files to/from wav as needed with pydub
+    - [ ] Configure ffmpeg on system, add to system path
+- [ ] Export requirements.txt
+- [ ] Troubleshoot various threading issues:
+    - [ ] MatPlotLib backend GUI issues
+    - [ ] Tortoise-tts must be called from main thread
+
+- [ ] TODO Issues - Streamlit Deploy:
+    - [ ] pyaudio senses no default mic in hosted streamlit environment
+        - [ ] Utilize streamlit-webrtc library
+    - [ ] streamlit deploy does not have access to system file uploader 
+
 
 See the [open issues](https://github.com/Shivamkak19/Deepfake-Detector/issues) for a full list of proposed features (and known issues).
 
