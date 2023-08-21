@@ -126,12 +126,15 @@ Use the local VoiceProtect deployment to analyze the likelihood that an input au
 
 Make sure to launch the file ./tortoise_tts/voiceProtect_app.py. The main app must be launched within the tortoise_tts folder, as tortoise_tts must be launched in the main thread to resolve signal issues with the atlastk library (see issues.txt). 
 
+<br />
 Uploaded file audio classification:
 ![VoiceProtect Screen Shot][product2]
 
+<br />
 Live audio stream classification:
 ![VoiceProtect Screen Shot][product4]
 
+<br />
 Results processing:
 ![VoiceProtect Screen Shot][product3]
 
