@@ -4,10 +4,13 @@
 import os
 import sys
 
+
 app_directory = os.path.dirname(os.path.abspath(__file__))
 submodule_directory = os.path.join(app_directory, 'tortoise_tts')
 sys.path.append(submodule_directory)
 
+target_folder = os.path.abspath('../tortoise_tts')
+os.chdir(target_folder)
 
 # Try to move script into tortoise_tts module while executing - threading issues:
 # absolute_path = os.path.abspath(__file__)
