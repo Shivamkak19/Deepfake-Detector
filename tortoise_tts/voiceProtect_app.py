@@ -1,24 +1,4 @@
-# Add tortoise_tts directory to path:
-# Calculate the absolute path of the directory containing app.py, submodule directory, and append to system path
-
-import os
-import sys
-import streamlit as st
-
-st.set_page_config(layout = "wide")
-
-app_directory = os.path.dirname(os.path.abspath(__file__))
-submodule_directory = os.path.join(app_directory, 'tortoise_tts')
-sys.path.append(submodule_directory)
-
-st.info("this is app dir")
-st.info(app_directory)
-os.chdir(app_directory)
-
-target_folder = os.path.abspath('../tortoise_tts')
-os.chdir(target_folder)
-
-# Try to move script into tortoise_tts module while executing - threading issues:
+# PHASED OUT: Try to move script into tortoise_tts module while executing - threading issues:
 # absolute_path = os.path.abspath(__file__)
 # subdir_path = os.path.abspath("./tortoise_tts")
 # target_path = os.path.join(subdir_path, "voiceProtect_app.py")
@@ -30,6 +10,36 @@ os.chdir(target_folder)
 # os.replace(absolute_path, target_path)
 # shutil.move(absolute_path, target_path)
 
+
+# Add tortoise_tts directory to path:
+# Calculate the absolute path of the directory containing app.py, submodule directory, and append to system path
+
+
+# System imports
+import wave
+import sys
+import os 
+import io 
+from PIL import Image
+from glob import glob
+import subprocess
+
+# Add tortoise_tts directory to path:
+# Calculate the absolute path of the directory containing app.py, submodule directory, and append to system path
+app_directory = os.path.dirname(os.path.abspath(__file__))
+submodule_directory = os.path.join(app_directory, 'tortoise_tts')
+sys.path.append(submodule_directory)
+
+# Add parent directory to system PATH to import from subdirectories
+parent_directory = os.path.join(os.path.dirname(__file__), '..')
+parent_directory = os.path.abspath(parent_directory)
+sys.path.append(parent_directory)
+
+# Set current working directory to parent dir of main app file(/tortoise_tts)
+# Resolves issue: local deploy launches CWD in parent dir, Streamlit Deploy launches CWD in root dir
+os.chdir(app_directory)
+
+
 # Main functionality
 from tortoise.models.classifier import AudioMiniEncoderWithClassifierHead
 # import pyaudio 
@@ -37,30 +47,15 @@ from tortoise.models.classifier import AudioMiniEncoderWithClassifierHead
 import torchaudio
 import torch
 import torch.nn.functional as F
-
-# System imports
-import wave
-# import sys
-# import os 
-import io 
-from PIL import Image
-from glob import glob
-import subprocess
-
+import streamlit as st
 
 # Misc imports
-# import streamlit as st
 import librosa
 import plotly.express as px
 import numpy as np 
 from scipy.io.wavfile import read 
 from pydub import AudioSegment
 import matplotlib.pyplot as plt
-
-# Add parent directory to system PATH to import from subdirectories
-parent_directory = os.path.join(os.path.dirname(__file__), '..')
-parent_directory = os.path.abspath(parent_directory)
-sys.path.append(parent_directory)
 
 # App function imports
 from inputAudio import inputAudio
@@ -110,6 +105,8 @@ def setStreamlitGUI():
     #App GUI
     # st.info("Current working directory:", os.getcwd())
 
+    st.set_page_config(layout = "wide")
+
     logo = Image.open('../resources/VoiceProtect-logo.png')
     # Resize, maintain aspect ratio
     logo.thumbnail((600, 600))
@@ -157,7 +154,6 @@ def setStreamlitGUI():
 
                     generateWavePlot(absolute_path)
 
-                    # st.pyplot(generateWavePlot(output_wav_file))
 
     # Record User audio data, use as input to model
     with col2:
@@ -196,7 +192,6 @@ def setStreamlitGUI():
                 absolute_path = os.path.abspath(relative_path)
 
                 generateWavePlot(absolute_path)
-                # st.pyplot(generateWavePlot(absolute_path))
 
 
 # Record user audio stream with pyaudio
