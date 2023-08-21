@@ -7,7 +7,7 @@
 #  ##::. ##:. #######::::: ##:::: ########:
 # ..::::..:::.......::::::..:::::........::
 
-# Both local deployment and the live Streamlit deployment launch from THIS FILE (./tortoise_tts/voiceProtect_app.py), NOT (./voiceProtect_app.py).
+# Both local deployment and the live Streamlit deployment launch the main function in tortoise_tts/voiceProtect_app.py, NOT this file. This is a duplicate file for ease of accessility.
 # Deploying from the root directory causes threading issues as tortoise_tts must be launched in the main thread, which is assigned to the parent dir of __file__ on launch.
 # ER: ValueError: signal only works in main thread of the main interpreter ; how to fix, or otherwise how to avoid having to download locally. See Issues.txt for full trace.
 
