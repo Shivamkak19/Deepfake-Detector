@@ -14,15 +14,13 @@
     <img src="resources\VoiceProtect-logo.png" alt="VoiceProtect logo">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">VoiceProtect - Deepfake Audio Detector</h3>
 
-<h3 align="center">Project Description</h3>
+<h3 align="center">Implemented on the Tortoise-TTS Library</h3>
 
-This algorithm takes advantage of an arbitrage between certain dual-class shares that hold nearly identical market caps. Specifically, it identifies price discrepencies between publicly-traded shares in a dual-class structure and simultaneously marks both a short and a long position (for an example of dual-class structure, Google Class A: GOOG vs Google Class B: GOOGL, Berkshire Hathaway Class A: BERK.A, Berkshire Hathaway Class B: BERK.B). The underlying assumption is that the similar market caps of the dual-class shares will eventually drive share prices to converge, meaning either the long or the short will be able to return a profit. 
+This app allows users to gauge whether audio files or live audio streams have been generated with AI. As deepfake audio scams are becoming more prevalent, reliable deepfake audio detectors will become increasingly valuable. This app leverages the Tortoise-TTS library, specifically the AudioMiniEncoderWithClassifierHead() function along with a classification model available publicly at [Tortoise-TTS on HuggingFace](https://huggingface.co/jbetker/tortoise-tts-v2) (saved as classifier.pth in root of this repository). 
 
-Notes: I have hard-coded a list of popular dual-class shares in "shares.csv". This list can be adjusted to preference. Additionally, an account is recognized as a Pattern Day Trader if it makes 4 day trades in a 5 day period with an account balance < $25,000. For learning purposes, the scheduler is only set up to run trades within this strict limit.  
-
-*C# implementation is still in development. Instructions for the Python implementation are listed in sections below. 
+The original intent of this app is toward a live time deployment with iOS/android call data, which is not accessible via public API's. The pyaudio record audio input acts a prototype for the feature of live scam call detection with call data. 
 
 <br />
 
@@ -33,30 +31,6 @@ Notes: I have hard-coded a list of popular dual-class shares in "shares.csv". Th
 <a href="https://github.com/Shivamkak19/Deepfake-Detector/issues">Request Feature</a>
 </div>
 
-
-
-<!-- PROJECT LOGO -->
-<br />
-<div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
-<h3 align="center">project_title</h3>
-
-  <p align="center">
-    project_description
-    <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
-  </p>
-</div>
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -98,20 +72,20 @@ Notes: I have hard-coded a list of popular dual-class shares in "shares.csv". Th
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Below, the set-up process is listed to run this project on your local machine. Note, the C# implementation is not yet live. Instructions for the Python implementation are included below. 
+<!-- Below, the set-up process is listed to run this project on your local machine. Note, the C# implementation is not yet live. Instructions for the Python implementation are included below.  -->
 
 ### Prerequisites
 
-To run this project, you must download the latest version of the pip installer
+<!-- To run this project, you must download the latest version of the pip installer
 
 * 
   ```sh
   pip install --upgrade pip
-  ```
+  ``` -->
 
 ### Installation
 
-1. Clone the repo
+<!-- 1. Clone the repo
    ```sh
    git clone https://github.com/Shivamkak19/Deepfake-Detector.git
    ```
@@ -124,14 +98,20 @@ To run this project, you must download the latest version of the pip installer
 3. Install dependencies
    ```sh
    pip install -r requirements.txt
-   ```
+   ``` -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This project was designed as a learning project for the purpose of exposure into the process of developing trading algorithms. Any usage must be compliant with Pattern Day Trading rules, and failure to comply to these standards will result in the user's Alpaca client being flagged and banned. Feel free to tinker with this algorithm and explore. Do make sure to replace the dummy text with your unique Client ID and secret key. 
+![VoiceProtect Screen Shot][product1]
+![VoiceProtect Screen Shot][product2]
+![VoiceProtect Screen Shot][product3]
+![VoiceProtect Screen Shot][product4]
+
+
+<!-- This project was designed as a learning project for the purpose of exposure into the process of developing trading algorithms. Any usage must be compliant with Pattern Day Trading rules, and failure to comply to these standards will result in the user's Alpaca client being flagged and banned. Feel free to tinker with this algorithm and explore. Do make sure to replace the dummy text with your unique Client ID and secret key.  -->
 
 <!-- ![Product Name Screen Shot][product-screenshot2]
 ![Product Name Screen Shot][product-screenshot3] -->
@@ -141,7 +121,7 @@ This project was designed as a learning project for the purpose of exposure into
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Designate target dual-class shares
+<!-- - [ ] Designate target dual-class shares
 - [ ] Authenticate Alpaca API with Client ID and secret
 - [ ] Perform HTTP GET/POST requests to fetch information from Alpaca Trading Client
     - [ ] Set up functionality to order long position, short position, sell open positions, and cancel pending positions
@@ -149,7 +129,7 @@ This project was designed as a learning project for the purpose of exposure into
 - [ ] Create algorithm for margins at which to buy/sell short and long positions
 - [ ] Liquidate all holdings 5 minutes before closing bell
 - [ ] Set up Python Scheduler to send necessary API calls every 30 sec, open hours, Mon - Fri
-- [ ] Create simple user interface to manage holdings via Streamlit
+- [ ] Create simple user interface to manage holdings via Streamlit -->
 
 See the [open issues](https://github.com/Shivamkak19/Deepfake-Detector/issues) for a full list of proposed features (and known issues).
 
@@ -189,8 +169,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []() Adam Hayes, Investopedia contributor, for a thorough explanation of dual-class shares and arbitrage.
-* Article Link: [Investopedia Article](https://www.investopedia.com/terms/d/dualclassstock.asp)
+* []() AI Anytime, for tutorials on the Tortoise-TTS library, useful function calls, and integration with other relevant libraries (torchaudio, librosa, etc).
+* Youtube Channel: [AI Anytime](https://www.youtube.com/@AIanytime)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -209,9 +189,11 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [license-url]: https://github.com/Shivamkak19/Deepfake-Detector/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/shivamkak
-[product-screenshot]: images/product-1.jpg
-[product-screenshot2]: images/product-2.jpg
-[product-screenshot3]: images/product-3.jpg
+
+[product1]: resources/product1.png
+[product2]: resources/product2.png
+[product3]: resources/product3.png
+[product4]: resources/product4.png
 
 <!-- Programming Language Shields -->
 [pandas]: https://img.shields.io/badge/Pandas-e30487?style=for-the-badge&logo=pandas&logoColor=130654
