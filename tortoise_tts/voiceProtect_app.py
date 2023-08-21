@@ -10,10 +10,7 @@
 # os.replace(absolute_path, target_path)
 # shutil.move(absolute_path, target_path)
 
-
-# Add tortoise_tts directory to path:
-# Calculate the absolute path of the directory containing app.py, submodule directory, and append to system path
-
+# //////////////////////////////////////////////////////////////////////////////
 
 # System imports
 import wave
@@ -30,11 +27,6 @@ app_directory = os.path.dirname(os.path.abspath(__file__))
 submodule_directory = os.path.join(app_directory, 'tortoise_tts')
 sys.path.append(submodule_directory)
 
-# Add parent directory to system PATH to import from subdirectories
-parent_directory = os.path.join(os.path.dirname(__file__), '..')
-parent_directory = os.path.abspath(parent_directory)
-sys.path.append(parent_directory)
-
 # Set current working directory to parent dir of main app file(/tortoise_tts)
 # Resolves issue: local deploy launches CWD in parent dir, Streamlit Deploy launches CWD in root dir
 os.chdir(app_directory)
@@ -42,7 +34,7 @@ os.chdir(app_directory)
 
 # Main functionality
 from tortoise.models.classifier import AudioMiniEncoderWithClassifierHead
-# import pyaudio 
+import pyaudio 
 
 import torchaudio
 import torch
