@@ -22,9 +22,8 @@ sys.path.append(submodule_directory)
 # shutil.move(absolute_path, target_path)
 
 # Main functionality
-from tortoise.models.classifier import AudioMiniEncoderWithClassifierHead
-# import pyaudio 
-
+from tortoise_tts.tortoise.models.classifier import AudioMiniEncoderWithClassifierHead
+import pyaudio
 import torchaudio
 import torch
 import torch.nn.functional as F
