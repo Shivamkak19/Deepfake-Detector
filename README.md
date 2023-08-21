@@ -59,12 +59,12 @@ The original intent of this app is toward a live time deployment with iOS/androi
 ### Built With
 
 * [![tortoise-tts][tortoise-tts]][tortoise-tts-url]
-* [![pyaudio][pyaudio]][pyaudio-url]
 * [![pydub][pydub]][pydub-url]
-* [![pytorch][pytorch]][pytorch-url]
+* [![pyaudio][pyaudio]][pyaudio-url]
 * [![torchaudio][torchaudio]][torchaudio-url]
-* [![streamlit][streamlit]][streamlit-url]
 * [![librosa][librosa]][librosa-url]
+* [![pytorch][pytorch]][pytorch-url]
+* [![streamlit][streamlit]][streamlit-url]
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -202,7 +202,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 [tortoise-tts]: https://img.shields.io/badge/Tortoise-TTS-1e883d.svg?&labelColor=ffffff
 [tortoise-tts-url]: https://github.com/neonbjb/tortoise-tts
 
-[pydub]: https://img.shields.io/badge/Py-Audio-0399cc.svg?&labelColor=ffffff
+[pydub]: https://img.shields.io/badge/Py-Dub-0399cc.svg?&labelColor=ffffff
 [pydub-url]: http://pydub.com/
 
 [torchaudio-url]: https://pytorch.org/audio/stable/index.html
