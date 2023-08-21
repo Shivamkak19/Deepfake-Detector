@@ -9,6 +9,10 @@ app_directory = os.path.dirname(os.path.abspath(__file__))
 submodule_directory = os.path.join(app_directory, 'tortoise_tts')
 sys.path.append(submodule_directory)
 
+st.info("this is app dir")
+st.info(app_directory)
+os.chdir(app_directory)
+
 target_folder = os.path.abspath('../tortoise_tts')
 os.chdir(target_folder)
 
