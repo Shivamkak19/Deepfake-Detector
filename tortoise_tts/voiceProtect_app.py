@@ -165,6 +165,8 @@ def setStreamlitGUI():
     with col2:
 
         p = pyaudio.PyAudio()
+        num = p.get_device_count()
+        st.info(num)
         for i in range(p.get_device_count()):
             info = p.get_device_info_by_index(i)
             st.info(f"Device {i}: {info['name']}")
