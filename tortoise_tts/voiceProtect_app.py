@@ -5,6 +5,7 @@ import os
 import sys
 import streamlit as st
 
+st.set_page_config(layout = "wide")
 
 app_directory = os.path.dirname(os.path.abspath(__file__))
 submodule_directory = os.path.join(app_directory, 'tortoise_tts')
@@ -107,7 +108,6 @@ def classify_audio_clip(clip):
 def setStreamlitGUI():
 
     #App GUI
-    st.set_page_config(layout = "wide")
     st.info("Current working directory:", os.getcwd())
 
     logo = Image.open('../resources/VoiceProtect-logo.png')
