@@ -77,26 +77,16 @@ from configWavPlot import configWavPlot
 # import matplotlib
 # matplotlib.use("TkAgg")  # Change to "Qt5Agg" or "QtAgg" if you prefer
 
-def load_audio_pydub(file):
-    audio = AudioSegment.from_file(io.BytesIO(file.read()))
-    lsr = audio.frame_rate
-    # Process the audio as needed
-    return audio, lsr
-
 # load an audio file as tensor for model input
 def load_audio(audiopath, sampling_rate =22000):
     if isinstance(audiopath, str):
         if audiopath.endswith('.mp3'):
-            audio, lsr = load_audio_pydub(audiopath)
-            # audio, lsr = librosa.load(audiopath, sr=sampling_rate)
+            audio, lsr = librosa.load(audiopath, sr=sampling_rate)
             audio = torch.FloatTensor(audio)
         else:
             assert False, f"Error for unsupported audio format {audiopath[-4]}"
     elif isinstance(audiopath, io.BytesIO):
 
-        dir = os.getcwd()
-        st.info(dir)
-        
         audio, lsr = torchaudio.load(audiopath)
         audio = audio[0]
     
@@ -148,8 +138,9 @@ def setStreamlitGUI():
         st.info("Upload a .mp3 file from your local machine to analyze")
         uploaded_file = st.file_uploader("Choose a file", type = 'mp3')
 
-        st.info(uploaded_file)
-        st.info(type(uploaded_file))
+        # ST deploy troubleshooting
+        # st.info(uploaded_file)
+        # st.info(type(uploaded_file))
 
         if uploaded_file is not None:
 
@@ -172,7 +163,6 @@ def setStreamlitGUI():
                     st.audio(uploaded_file)
 
                 with row3:
-                    st.info("tried")
                     # Convert uploaded mp3 to wav, path to WAV for matplotlib
                     output_wav_file = '../resources/upload.wav'
                     AudioSegment.from_mp3(uploaded_file).export(output_wav_file, format="wav")
@@ -184,12 +174,13 @@ def setStreamlitGUI():
     # Record User audio data, use as input to model
     with col2:
 
-        p = pyaudio.PyAudio()
-        num = p.get_device_count()
-        st.info(num)
-        for i in range(p.get_device_count()):
-            info = p.get_device_info_by_index(i)
-            st.info(f"Device {i}: {info['name']}")
+        # Device Testing for ST deploy
+        # p = pyaudio.PyAudio()
+        # num = p.get_device_count()
+        # st.info(num)
+        # for i in range(p.get_device_count()):
+        #     info = p.get_device_info_by_index(i)
+        #     st.info(f"Device {i}: {info['name']}")
 
         st.info("Record a live, 5 second audio clip live to analyze")
 
