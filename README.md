@@ -124,19 +124,20 @@ To run this project, you must download the latest version of the pip installer. 
 
 Use the local VoiceProtect deployment to analyze the likelihood that an input audio file or live audio recording contains audio created with generative AI. To receive results, wait until the streamlit app has finished processing function calls (indicated in the product pictures). The accuracy of this identification system is based on preset tortoise-tts models and functions, as described in main description above. 
 
-Make sure to launch the file ./tortoise_tts/voiceProtect_app.py. The main app must be launched within the tortoise_tts folder, as tortoise_tts must be launched in the main thread to resolve signal issues with the atlastk library (see issues.txt). 
+Make sure to launch the file ./tortoise_tts/voiceProtect_app.py. The main app must be launched within the tortoise_tts folder, as tortoise_tts must be launched in the main thread to resolve signal issues with the atlastk library (see issues.txt).  
 
-<br />
+
 Uploaded file audio classification:
-![VoiceProtect Screen Shot][product2]
+![VoiceProtect Screen Shot][product2]  
 
-<br />
+
 Live audio stream classification:
-![VoiceProtect Screen Shot][product4]
+![VoiceProtect Screen Shot][product4]  
 
-<br />
+
 Results processing:
-![VoiceProtect Screen Shot][product3]
+![VoiceProtect Screen Shot][product3]  
+
 
 ** Additionally, the live streamlit deployment of VoiceProtect is currently facing issues with detecting an input device for audio recording with pyaudio. Check back here for updates. ** 
 
