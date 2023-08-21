@@ -18,7 +18,7 @@ threadpoolctl
 llvmlite
 appdirs
 nbconvert==5.3.1
-tornado==4.2
+# tornado==4.2
 pydantic==1.9.1
 deepspeed==0.8.3
 py-cpuinfo
@@ -105,7 +105,7 @@ toml==0.10.2
 toolz==0.12.0
 torch==2.0.1
 torchaudio==2.0.2
-# tornado==6.3.3
+tornado==6.3.3
 tortoise==0.1.1
 typing_extensions==4.7.1
 tzdata==2023.3
