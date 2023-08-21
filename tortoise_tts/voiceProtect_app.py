@@ -77,11 +77,18 @@ from configWavPlot import configWavPlot
 # import matplotlib
 # matplotlib.use("TkAgg")  # Change to "Qt5Agg" or "QtAgg" if you prefer
 
+def load_audio_pydub(file):
+    audio = AudioSegment.from_file(io.BytesIO(file.read()))
+    lsr = audio.frame_rate
+    # Process the audio as needed
+    return audio, lsr
+
 # load an audio file as tensor for model input
 def load_audio(audiopath, sampling_rate =22000):
     if isinstance(audiopath, str):
         if audiopath.endswith('.mp3'):
-            audio, lsr = librosa.load(audiopath, sr=sampling_rate)
+            audio, lsr = load_audio_pydub(audiopath)
+            # audio, lsr = librosa.load(audiopath, sr=sampling_rate)
             audio = torch.FloatTensor(audio)
         else:
             assert False, f"Error for unsupported audio format {audiopath[-4]}"
