@@ -72,20 +72,29 @@ The original intent of this app is toward a live time deployment with iOS/androi
 <!-- GETTING STARTED -->
 ## Getting Started
 
-<!-- Below, the set-up process is listed to run this project on your local machine. Note, the C# implementation is not yet live. Instructions for the Python implementation are included below.  -->
+Below, the set-up process is listed to host VoiceProtect on your local machine. Be careful to install both the library requirements and the system requirements.
 
 ### Prerequisites
 
-<!-- To run this project, you must download the latest version of the pip installer
+To run this project, you must download the latest version of the pip installer. Additionally, download the system requirements listed below. 
+
+Download ffmpeg: https://ffmpeg.org/download.html (used by pydub)
+portaudio19-dev: macOS see below, windows should install implicitly with pyaudio
 
 * 
   ```sh
   pip install --upgrade pip
-  ``` -->
+  ```
+
+* MACOS ONLY:
+  ```sh
+  brew install portaudio
+  ```
+
 
 ### Installation
 
-<!-- 1. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/Shivamkak19/Deepfake-Detector.git
    ```
@@ -98,7 +107,7 @@ The original intent of this app is toward a live time deployment with iOS/androi
 3. Install dependencies
    ```sh
    pip install -r requirements.txt
-   ``` -->
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
